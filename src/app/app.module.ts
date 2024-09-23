@@ -19,8 +19,7 @@ import { ConfigService, ConfigModule } from "@nestjs/config";
       useFactory: async (configService: ConfigService) => ({
       type: "mysql",
       url: configService.get<string>('MYSQL_URL'),
-      entities: [User, Session, Favorite],
-      synchronize: true,
+      entities: [User, Session, Favorite],      
       autoLoadEntities: true,
       }),
       inject: [ConfigService],
